@@ -1,99 +1,77 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Lab3;
+﻿using Lab3;
+using NUnit.Framework;
 
 namespace UnitTests
 {
-    [TestClass]
-    public class UnitTest1
+
+    public class Tests
     {
-        [TestMethod]
-        public void FirstUnitTest()
-        {
-            double firstSide = 4, secondSide = 5, thirdSide = 6;
-            bool expectedResult = true;
-            TestedClass myTestedClass = new TestedClass();
-            Assert.AreEqual(expectedResult, myTestedClass.TriangleCheck(firstSide, secondSide, thirdSide));
-        }
-        [TestMethod]
-        public void SecondUnitTest()
-        {
+        Triangle triangle = new Triangle();
 
-            double firstSide = 25, secondSide = 25, thirdSide = 25;
-            bool expectedResult = true;
-            TestedClass myTestedClass = new TestedClass();
-            Assert.AreEqual(expectedResult, myTestedClass.TriangleCheck(firstSide, secondSide, thirdSide));
-        }
-        [TestMethod]
-        public void ThirdUnitTest()
+        [Test]
+        public void FirstTest()
         {
-
-            double firstSide = 1, secondSide = 2, thirdSide = 3;
-            bool expectedResult = false;
-            TestedClass myTestedClass = new TestedClass();
-            Assert.AreEqual(expectedResult, myTestedClass.TriangleCheck(firstSide, secondSide, thirdSide));
-        }
-        [TestMethod]
-        public void FourthUnitTest()
-        {
-
-            double firstSide = 120, secondSide = 90, thirdSide = 6;
-            bool expectedResult = false;
-            TestedClass myTestedClass = new TestedClass();
-            Assert.AreEqual(expectedResult, myTestedClass.TriangleCheck(firstSide, secondSide, thirdSide));
-        }
-        [TestMethod]
-        public void FifthUnitTest()
-        {
-
-            double firstSide = 1277, secondSide = 2147, thirdSide = 231;
-            bool expectedResult = false;
-            TestedClass myTestedClass = new TestedClass();
-            Assert.AreEqual(expectedResult, myTestedClass.TriangleCheck(firstSide, secondSide, thirdSide));
-        }
-        [TestMethod]
-        public void SixthUnitTest()
-        {
-
-            double firstSide = 181135, secondSide = 164835, thirdSide = 410450;
-            bool expectedResult = false;
-            TestedClass myTestedClass = new TestedClass();
-            Assert.AreEqual(expectedResult, myTestedClass.TriangleCheck(firstSide, secondSide, thirdSide));
-        }
-        [TestMethod]
-        public void SevenshUnitTest()
-        {
-
-            double firstSide = 87, secondSide = 5, thirdSide = 4;
-            bool expectedResult = false;
-            TestedClass myTestedClass = new TestedClass();
-            Assert.AreEqual(expectedResult, myTestedClass.TriangleCheck(firstSide, secondSide, thirdSide));
-        }
-        [TestMethod]
-        public void EghtsUnitTest()
-        {
-
-            double firstSide = 4, secondSide = 4, thirdSide = 6;
-            bool expectedResult = true;
-            TestedClass myTestedClass = new TestedClass();
-            Assert.AreEqual(expectedResult, myTestedClass.TriangleCheck(firstSide, secondSide, thirdSide));
-        }
-        [TestMethod]
-        public void NinesUnitTest()
-        {
-            double firstSide = 3, secondSide = 4, thirdSide = 5.001;
-            bool expectedResult = true;
-            TestedClass myTestedClass = new TestedClass();
-            Assert.AreEqual(expectedResult, myTestedClass.TriangleCheck(firstSide, secondSide, thirdSide));
-        }
-        [TestMethod]
-        public void TensUnitTest()
-        {
-            double firstSide = 2, secondSide = 20, thirdSide = 18.00001;
-            bool expectedResult = true;
-            TestedClass myTestedClass = new TestedClass();
-            Assert.AreEqual(expectedResult, myTestedClass.TriangleCheck(firstSide, secondSide, thirdSide));
+            Assert.AreEqual(true, triangle.TriangleCheck(1, 2, 3));
         }
 
+        [Test]
+        public void SecondTest()
+        {
+            Assert.AreEqual(true, triangle.TriangleCheck(25, 25, 25));
+        }
+
+        [Test]
+        public void ThirdTest()
+        {
+
+            Assert.AreEqual(false, triangle.TriangleCheck(10, 0, 2));
+        }
+
+        [Test]
+        public void FourthTest()
+        {
+
+            Assert.AreEqual(true, triangle.TriangleCheck(120, 90, 6));
+        }
+
+        [Test]
+        public void FifthTest()
+        {
+            Assert.AreEqual(false, triangle.TriangleCheck(1277, 2147, 231));
+        }
+
+        [Test]
+        public void SixthTest()
+        {
+
+            Assert.AreEqual(false, triangle.TriangleCheck(181135, 164835, 410450));
+        }
+
+        [Test]
+        public void SevenshTest()
+        {
+
+            Assert.AreEqual(false, triangle.TriangleCheck(87, 5, 4));
+
+        }
+
+        [Test]
+        public void EghtsTest()
+        {
+
+            Assert.AreEqual(false, triangle.TriangleCheck(4, 4, 6));
+        }
+
+        [Test]
+        public void NinesTest()
+        {
+            Assert.AreEqual(true, triangle.TriangleCheck(3, 4, 5.001));
+
+        }
+        [Test]
+        public void TensTest()
+        {
+            Assert.AreEqual(true, triangle.TriangleCheck(2, 20, 18.00001));
+        }
     }
 }
